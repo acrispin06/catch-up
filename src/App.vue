@@ -68,8 +68,8 @@ export default{
       </pv-menubar>
     </div>
     <div>
-      <unavailable-content v-if="errors" :errors="errors"></unavailable-content>
-      <main-content v-else :articles="articles"></main-content>
+      <main-content v-if="erros" :articles="articles"></main-content>
+      <unavailable-content v-else :articles="errors"></unavailable-content>
     </div>
     <footer-content></footer-content>
   </div>
