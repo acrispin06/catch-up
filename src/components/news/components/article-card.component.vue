@@ -27,7 +27,7 @@ export default {
         </span>
       </p>
       <p class="flex align-content-start flex-wrap mt-4">
-        {{ article.description
+        {{ article.description }}
       </p>
     </template>
     
