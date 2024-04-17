@@ -1,13 +1,13 @@
 <script>
 import {NewsApiService} from "@/components/news/service/news-api.service.js";
-import SideMenu from "@/components/news/components/side-menu.component.vue";
 import UnavailableContent from "@/components/news/components/unavailable-content.component.vue";
 import MainContent from "@/components/news/components/main-content.component.vue";
 import FooterContent from "@/components/news/components/footer-content.component.vue";
+import SideMenu from "@/components/news/components/side-menu.component.vue";
 
 export default{
   name: "App",
-  component: {FooterContent, UnavailableContent, MainContent, SideMenu},
+  components: {FooterContent, UnavailableContent, MainContent, SideMenu},
   data(){
     return {
       articles: [],
@@ -62,13 +62,10 @@ export default{
           <pv-button label="CatchUp" icon="pi pi-bars" @click="toggleSidebar"></pv-button>
           <side-menu v-model:visible="sidebarVisible" v-on:source-selected="setSource"></side-menu>
         </template>
-        <template #end>
-          <pv-button label="Sign In" icon="pi pi-user"></pv-button>
-        </template>
       </pv-menubar>
     </div>
     <div>
-      <main-content v-if="erros" :articles="articles"></main-content>
+      <main-content v-if="errors" :articles="articles"></main-content>
       <unavailable-content v-else :articles="errors"></unavailable-content>
     </div>
     <footer-content></footer-content>
