@@ -1,4 +1,4 @@
-<script setup>
+<script>
 import ArticleCard from "@/components/news/components/article-card.component.vue";
 export default {
   name: "main-content",
